@@ -26,7 +26,7 @@ int main()
     while(ist >> hour >> temperature)
     {
         if(hour < 0 || 23 < hour) error("hour out of range");
-        temps.push_back(reading{hour,temperature});
+        temps.push_back(Reading{hour,temperature});
     }
 
     for (int i=0; i<temps.size(); i++)
