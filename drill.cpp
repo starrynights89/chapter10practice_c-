@@ -41,7 +41,7 @@ istream& operator>>(istream& is, Point& p)
 //function to print to cout
 void print_vector(const vector<Point>& points)
 {
-    for (int i = 0; i<points.size(); i++)
+    for (size_t i = 0; i<points.size(); i++)
     {
         cout << points[i] << endl;
     }
@@ -52,7 +52,7 @@ void write_to_file(const vector<Point>& points, const string& name)
 {
     ofstream ost(name.c_str());
     if(!ost) error("can't open input fiile, ",name);
-    for (int i = 0; i<points.size(); i++)
+    for (size_t i = 0; i<points.size(); i++)
     {
         ost << points[i] << endl;
     }
@@ -74,7 +74,7 @@ void compare_vectors(const vector<Point>& points1, const vector<Point>& points2)
     {
         error("Something's wrong!");
     }
-    for(int i = 0; i<points1.size(); i++)
+    for(size_t i = 0; i<points1.size(); i++)
     {
         if (points1[i]!=points2[i])
         {
@@ -101,7 +101,7 @@ try
     print_vector(original_points);
 
     // write points to file
-    string filename = "test.txt";
+    string filename = "mydata.txt";
     write_to_file(original_points,filename);
 
     //read points from file
