@@ -28,6 +28,7 @@ istream& operator>>(istream& is, Point& p)
 {
     int x,y;
     char ch1, ch2, ch3;
+    is >> ch1 >> x >> ch2 >> y >> ch3;
     if(!is) return is;
     if(ch1!='(' || ch2!=',' || ch3!=')')
     {
