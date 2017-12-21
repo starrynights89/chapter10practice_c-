@@ -48,3 +48,12 @@ void print_vector(const vector<Point>& points)
 }
 
 //function to print to file
+void write_to_file(const vector<Point>& points, const string& name)
+{
+    ofstream ost(name.c_str());
+    if(!ost) error("can't open input fiile, ",name);
+    for (int i = 0; i<points.size(); i++)
+    {
+        ost << points[i] << endl;
+    }
+}
