@@ -113,4 +113,15 @@ try
     print_vector(processed_points);
     cout << "\nOriginal data:\n";
     print_vector(original_points);
+
+    //compare vectors
+    compare_vectors(original_points,processed_points);
+}
+catch(exception& e)
+{
+    cerr << "exception: " << e.what() << endl;
+}
+catch(...)
+{
+    cerr << "exception\n";
 }
