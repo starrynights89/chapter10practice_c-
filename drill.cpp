@@ -29,7 +29,7 @@ istream& operator>>(istream& is, Point& p)
     int x,y;
     char ch1, ch2, ch3;
     if(!is) return is;
-    if(ch1!='(' || ch1!=',' || ch3!=')')
+    if(ch1!='(' || ch2!=',' || ch3!=')')
     {
         is.clear(ios_base::failbit);
         return is;
@@ -41,7 +41,7 @@ istream& operator>>(istream& is, Point& p)
 //function to print to cout
 void print_vector(const vector<Point>& points)
 {
-    for (int i = i; i<points.size(); i++)
+    for (int i = 0; i<points.size(); i++)
     {
         cout << points[i] << endl;
     }
