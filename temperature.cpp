@@ -32,4 +32,7 @@ int main()
     for (int i=0; i<temps.size(); i++)
         ost << '(' << temps[i].hour << ','
             << temps[i].temperature << ")\n";
+
+    keep_window_open();
+    return 0;
 }

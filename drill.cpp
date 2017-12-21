@@ -117,6 +117,9 @@ try
 
     //compare vectors
     compare_vectors(original_points,processed_points);
+
+    keep_window_open();
+    return 0;
 }
 catch(exception& e)
 {
