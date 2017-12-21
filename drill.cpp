@@ -57,3 +57,60 @@ void write_to_file(const vector<Point>& points, const string& name)
         ost << points[i] << endl;
     }
 }
+
+//function to read from file
+void fill_from_file(vector<Point>& points, const string& name)
+{
+    ifstream ist(name.c_str());
+    if (!ist) error("can't open input file, ",name);
+    Point pp;
+    while (ist>>pp) points.push_back(pp);
+}
+
+//function to compare two vectors
+void compare_vectors(const vector<Point>& points1, const vector<Point>& points2)
+{
+    if (points1.size() != points2.size())
+    {
+        error("Something's wrong!");
+    }
+    for(int i = 0; i<points1.size(); i++)
+    {
+        if (points1[i]!=points2[i])
+        {
+            error("Something's wrong!");
+        }
+    }
+}
+
+int main()
+try
+{
+    //enter points
+    vector<Point> original_points;
+    cout << "Enter 7 (x,y) pairs:\n";
+    for (int i = 0; i<7; i++)
+    {
+        Point p;
+        cin >> p;
+        original_points.push_back(p);
+    }
+
+    //print points
+    cout << "\nOriginal points:\n";
+    print_vector(original_points);
+
+    // write points to file
+    string filename = "test.txt";
+    write_to_file(original_points,filename);
+
+    //read points from file
+    vector<Point> processed_points;
+    fill_from_file(processed_points,filename);
+
+    //print data from both vectors
+    cout << "\nData from ifstream:\n";
+    print_vector(processed_points);
+    cout << "\nOriginal data:\n";
+    print_vector(original_points);
+}
